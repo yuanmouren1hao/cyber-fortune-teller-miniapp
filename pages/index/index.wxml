@@ -1,0 +1,10 @@
+
+<view class="container">
+  <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+  <view class="title">AI玄学大师</view>
+  <view class="subtitle">洞悉天机，预见未来</view>
+  <view class="button-group">
+    <button class="primary-button" bindtap="navigateToInput" data-type="bazi">输入生辰八字</button>
+    <button class="primary-button" bindtap="navigateToInput" data-type="question">输入问题描述</button>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+
+{
+  "pages": [
+    "pages/index/index",
+    "pages/input/input",
+    "pages/basic_result/basic_result",
+    "pages/detailed_result/detailed_result"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#141428",
+    "navigationBarTitleText": "AI玄学大师",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "ad-modal": "/components/ad_modal/ad_modal",
+    "wuxing-chart": "/components/wuxing_chart/wuxing_chart",
+    "share-canvas": "/components/share_canvas/share_canvas"
+  },
+  "permission": {
+    "scope.userInfo": {
+      "desc": "您的头像和昵称将用于生成分享海报"
+    }
+  },
+  "requiredPrivateInfos": [
+    "chooseAddress",
+    "choosePoi"
+  ],
+  "navigateToMiniProgramAppIdList": []
+}

@@ -1,0 +1,14 @@
+
+<view class="canvas-modal" wx:if="{{showCanvas}}">
+  <view class="canvas-container">
+    <canvas style="width: 375px; height: 667px;" canvas-id="shareCanvas"></canvas>
+  </view>
+  <view class="button-group">
+    <button class="save-btn" bindtap="saveImage">保存到相册</button>
+    <button class="share-btn" bindtap="shareToFriend">分享给朋友</button>
+    <button class="close-btn" bindtap="hide">关闭</button>
+  </view>
+  <view class="share-tips">
+    <text>保存图片后可分享到朋友圈</text>
+  </view>
+</view>

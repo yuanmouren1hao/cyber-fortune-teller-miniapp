@@ -1,0 +1,27 @@
+
+<view class="ad-modal" wx:if="{{showAd}}">
+  <view class="ad-content">
+    <!-- 广告加载中显示 -->
+    <view class="ad-loading" wx:if="{{loadingAd}}">
+      <view class="loading-icon"></view>
+      <view class="loading-text">广告加载中...</view>
+    </view>
+    
+    <!-- 广告加载失败显示 -->
+    <view class="ad-error" wx:if="{{adError}}">
+      <view class="error-text">{{errorMsg}}</view>
+      <view class="error-subtext">请稍后再试</view>
+      <button class="retry-button" bindtap="useBackupAd">使用备用方式</button>
+    </view>
+    
+    <!-- 备用广告显示 -->
+    <view class="backup-ad" wx:if="{{showBackupAd}}">
+      <view class="backup-content">
+        <view class="placeholder-text">模拟广告播放中...</view>
+        <view class="placeholder-subtext">（此为备用广告，将在{{backupCountdown}}秒后自动关闭）</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 注意：实际的激励视频广告是由小程序API创建的，不需要在WXML中定义视图 -->

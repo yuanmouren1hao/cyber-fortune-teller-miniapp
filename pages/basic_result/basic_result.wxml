@@ -1,0 +1,44 @@
+
+<view class="container">
+  <view wx:if="{{loading}}" class="loading-container">
+    <image class="loading-gif" src="/images/loading.gif" mode="aspectFit"></image>
+    <view class="loading-text">正在为您解析命理...</view>
+  </view>
+
+  <view wx:if="{{!loading && result}}" class="result-container">
+    <view class="card">
+      <view class="card-title">运势关键词</view>
+      <view class="keyword">{{result.keyword}}</view>
+    </view>
+    <view class="card">
+      <view class="card-title">五行分析</view>
+      <view class="card-content">{{result.wuxing}}</view>
+    </view>
+    <view class="card">
+      <view class="card-title">五行能量</view>
+      <wuxing-chart wx:if="{{result.wuxingData}}" chart-data="{{result.wuxingData}}"></wuxing-chart>
+    </view>
+    <view class="card">
+      <view class="card-title">事业运势</view>
+      <view class="card-content">{{result.career}}</view>
+    </view>
+    <view class="card">
+      <view class="card-title">健康预警</view>
+      <view class="card-content">{{result.health}}</view>
+    </view>
+    <view class="card">
+      <view class="card-title">今日幸运色</view>
+      <view class="lucky-color" style="background-color: {{result.color_value}};">{{result.lucky_color}}</view>
+    </view>
+
+    <button class="primary-button" bindtap="watchAdToUnlock">观看广告，查看详细解读</button>
+  </view>
+  
+  <view wx:if="{{error}}" class="error-container">
+      <view class="error-text">{{error}}</view>
+      <button class="primary-button" bindtap="retry">重试</button>
+  </view>
+</view>
+
+<!-- 广告模态框组件，绑定成功和失败事件 -->
+<ad-modal id="adModal" bind:adfinished="onAdFinished" bind:adfailed="onAdFailed"></ad-modal>

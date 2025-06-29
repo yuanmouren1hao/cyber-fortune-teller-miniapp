@@ -1,0 +1,27 @@
+
+<view class="container">
+  <view class="title">{{pageTitle}}</view>
+  
+  <!-- 生辰八字输入 -->
+  <view wx:if="{{inputType === 'bazi'}}" class="form-group">
+    <picker mode="date" value="{{date}}" start="1900-01-01" end="2100-12-31" bindchange="bindDateChange">
+      <view class="input-item">
+        <text>出生日期</text>
+        <text class="picker-value">{{date}}</text>
+      </view>
+    </picker>
+    <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+      <view class="input-item">
+        <text>出生时间</text>
+        <text class="picker-value">{{time}}</text>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 问题描述输入 -->
+  <view wx:if="{{inputType === 'question'}}" class="form-group">
+    <textarea class="textarea-input" placeholder="请输入您想问的问题，例如“我的事业发展如何？”" maxlength="100" bindinput="bindQuestionInput"></textarea>
+  </view>
+
+  <button class="primary-button" bindtap="startAnalysis">开始分析</button>
+</view>

@@ -1,0 +1,19 @@
+
+<view class="chart-container">
+  <view class="chart-title">五行能量分析</view>
+  <view class="chart-body">
+    <view class="y-axis">
+      <view class="y-label">强</view>
+      <view class="y-label">中</view>
+      <view class="y-label">弱</view>
+    </view>
+    <view class="bars-container">
+      <view wx:for="{{wuxingData}}" wx:key="name" class="bar-item">
+        <view class="bar-wrapper">
+          <view class="bar" style="height: {{item.value}}%; background-color: {{item.color}};"></view>
+        </view>
+        <view class="bar-label">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>

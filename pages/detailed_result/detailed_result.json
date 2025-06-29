@@ -1,0 +1,7 @@
+
+{
+  "usingComponents": {
+    "share-canvas": "/components/share_canvas/share_canvas"
+  },
+  "navigationBarTitleText": "详细解读"
+}

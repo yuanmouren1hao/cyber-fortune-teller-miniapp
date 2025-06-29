@@ -1,0 +1,8 @@
+
+{
+  "usingComponents": {
+    "wuxing-chart": "/components/wuxing_chart/wuxing_chart",
+    "ad-modal": "/components/ad_modal/ad_modal"
+  },
+  "navigationBarTitleText": "基础命理分析"
+}

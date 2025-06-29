@@ -1,0 +1,62 @@
+
+.chart-container {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.chart-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #FFD700;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+.chart-body {
+  display: flex;
+  align-items: flex-end;
+  height: 300rpx;
+}
+.y-axis {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #B4B4C8;
+  padding-right: 10rpx;
+}
+.bars-container {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 100%;
+  border-left: 1rpx solid #B4B4C8;
+  border-bottom: 1rpx solid #B4B4C8;
+}
+.bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15%;
+}
+.bar-wrapper {
+  width: 40rpx;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.bar {
+  width: 100%;
+  border-radius: 10rpx 10rpx 0 0;
+  animation: bar-grow 1.5s ease-out;
+}
+@keyframes bar-grow {
+  from { height: 0; }
+}
+.bar-label {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #FFFFFF;
+}

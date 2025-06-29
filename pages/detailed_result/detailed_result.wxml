@@ -1,0 +1,61 @@
+
+<view class="container">
+  <!-- 未授权访问显示 -->
+  <view class="unauthorized-container" wx:if="{{!authorized}}">
+    <image class="lock-icon" src="/images/lock.png" mode="aspectFit"></image>
+    <view class="unauthorized-text">您需要先观看广告解锁详细内容</view>
+    <button class="primary-button" bindtap="goBack">返回观看广告</button>
+  </view>
+
+  <!-- 已授权访问显示 -->
+  <view class="result-container" wx:if="{{authorized && result}}">
+    <view class="unlock-banner">
+      <image class="unlock-icon" src="/images/unlock.png" mode="aspectFit"></image>
+      <view class="unlock-text">详细解读已解锁</view>
+    </view>
+    
+    <view class="fortune-keyword">
+      <text class="keyword-text">{{result.fortune_keyword || '吉'}}</text>
+    </view>
+    
+    <view class="card">
+      <view class="card-title">行业适配建议</view>
+      <view class="card-content">{{result.industry_suggestion}}</view>
+    </view>
+    
+    <view class="card">
+      <view class="card-title">风水化解方案</view>
+      <view class="card-content">{{result.solution}}</view>
+    </view>
+    
+    <view class="card">
+      <view class="card-title">财运指导</view>
+      <view class="card-content">{{result.financial_guidance || '根据您的五行分析，建议投资稳健型理财产品，避免高风险投资。适当储蓄，为未来做好规划。'}}</view>
+    </view>
+    
+    <view class="card">
+      <view class="card-title">感情指引</view>
+      <view class="card-content">{{result.relationship_guidance || '您的桃花运势平稳，已有伴侣的人注重沟通交流，单身者可在社交场合寻缘分。'}}</view>
+    </view>
+    
+    <view class="share-section">
+      <button class="primary-button" bindtap="generateShareImage" disabled="{{isGeneratingShare}}">
+        <text wx:if="{{!isGeneratingShare}}">生成精美分享海报</text>
+        <text wx:else>正在生成...</text>
+      </button>
+      <button class="share-button" open-type="share">分享给朋友</button>
+    </view>
+    
+    <view class="share-tips">
+      <text>分享您的命理解析，让朋友也来测算命运</text>
+    </view>
+  </view>
+  
+  <view wx:if="{{authorized && !result}}" class="error-container">
+    <view class="error-text">未能加载详细结果，请返回重试。</view>
+    <button class="primary-button" bindtap="goBack">返回</button>
+  </view>
+</view>
+
+<!-- 分享画布组件 -->
+<share-canvas id="shareCanvas" resultData="{{result}}" userInfo="{{userInfo}}" bind:shareToFriend="handleShareToFriend"></share-canvas>
