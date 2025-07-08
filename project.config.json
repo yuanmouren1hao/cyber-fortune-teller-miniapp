@@ -1,8 +1,8 @@
-
 {
   "description": "项目配置文件",
   "packOptions": {
-    "ignore": []
+    "ignore": [],
+    "include": []
   },
   "setting": {
     "urlCheck": true,
@@ -25,18 +25,30 @@
     },
     "useIsolateContext": true,
     "useCompilerModule": true,
-    "userConfirmedUseCompilerModuleSwitch": false
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "condition": true,
+    "compileWorklet": false,
+    "uglifyFileName": false,
+    "enhance": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "useCompilerPlugins": false,
+    "swc": false,
+    "disableSWC": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.8.0",
-  "appid": "wx_your_appid",
+  "appid": "wx74d2ab5e48d16064",
   "projectname": "AI算命小程序",
-  "debugOptions": {
-    "hidedInDevtools": []
-  },
   "isGameTourist": false,
   "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
+  "simulatorPluginLibVersion": {
+    "wxext14566970e7e9f62": "3.6.5-37"
+  },
   "condition": {
     "search": {
       "list": []
@@ -53,5 +65,7 @@
     "miniprogram": {
       "list": []
     }
-  }
+  },
+  "projectArchitecture": "multiPlatform",
+  "editorSetting": {}
 }
